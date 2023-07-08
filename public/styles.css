@@ -67,6 +67,7 @@ h3{
 /* details styles */
 .details{
   position: relative;
+  text-align: justify;
 }
 .delete{
   position: absolute;

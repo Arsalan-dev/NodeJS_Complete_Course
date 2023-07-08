@@ -2,16 +2,15 @@ const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const Blog = require("./models/blog");
+require('dotenv').config();
 
 // express app
 const app = express();
 
 // connect to db
 
-const dbURI =
-  "mongodb+srv://arsalan11772:test123@mycluster.jsmox6d.mongodb.net/node_complete_course_db?retryWrites=true&w=majority";
 mongoose
-  .connect(dbURI)
+  .connect(process.env.MONGO_URL)
   .then((result) => {
     console.log("connected to db");
     // listen for requests only after app is connected to db
